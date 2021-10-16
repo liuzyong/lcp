@@ -1,6 +1,8 @@
-import Form from "@rjsf/semantic-ui";
+import { withTheme } from '@rjsf/core';
+import { Theme as SemanticUITheme } from '@rjsf/semantic-ui';
 import { useState } from "react";
 import MyData from "../../data/data";
+const Form = withTheme(SemanticUITheme);
 
 const SemanticSchema = () => {
 	const [formData, setFormData] = useState({

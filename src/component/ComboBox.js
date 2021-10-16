@@ -1,41 +1,63 @@
-import * as React from "react";
+import React, { useEffect } from "react";
+import { connect } from 'dva';
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
-export default function ComboBox() {
-	// const [value, setValue] = React.useState(top100Films[0]);
-	const [inputValue, setInputValue] = React.useState();
+import MaterialSchema from "./UI/MaterialSchema";
+import AntdSchema from "./UI/AntdSchema";
+import BootstrapSchema from "./UI/BootstrapSchema";
+import FluentSchema from "./UI/FluentSchema";
+// import SemanticSchema from "./component/UI/SemanticSchema";
+
+const ComboBox = (props) => {
+	const { dispatch, themes } = props;
+	const onInputChange = (event, newValue) => {
+		dispatch({
+			type: 'themes/saveThemes',
+			payload: newValue,
+		});
+	};
+
+	useEffect(() => {
+	});
+
 	return (
 		<div>
-			{/* <div>{`value is : ${value !== null ? `'${value.label}'` : "null"}`}</div> */}
-			<div>{`inputValue is '${inputValue}'`}</div>
-			<Autocomplete
-				// value={value}
-				// onChange={(even, newValue) => {
-				// 	setValue(newValue);
-				// }}
-				inputValue={inputValue}
-				// 必须是两个参数 event不能省略
-				onInputChange={(event, newValue) => {
-					setInputValue(newValue);
-				}}
-				disablePortal
-				id="combo-box-demo"
-				options={Themes}
-				// sx={{ width: 300 }}
-				renderInput={(params) => (
-					<TextField {...params} label="Select themes" variant="standard" />
-				)}
-			/>
+			<div>
+				<Autocomplete
+					inputValue={themes.uiSchema}
+					// 必须是两个参数 event不能省略
+					onInputChange={onInputChange}
+					disablePortal
+					id="combo-box-demo"
+					options={ThemesList}
+					// sx={{ width: 300 }}
+					renderInput={(params) => (
+						<TextField {...params} label="Select themes" variant="standard" />
+					)}
+				/>
+			</div>
+			{
+				themes.uiSchema == "Material-ui" ? <MaterialSchema />
+					: themes.uiSchema == "Antd" ? <AntdSchema />
+						: themes.uiSchema == "Fluent-ui" ? <FluentSchema />
+							: themes.uiSchema == "Bootstrap 4" ? <BootstrapSchema />
+								// : Themes == "Semantic UI" ? <SemanticSchema />
+								: <MaterialSchema />
+			}
 		</div>
 	);
-}
 
-// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
-const Themes = [
-	{ label: "Semantic UI" },
-	{ label: "antd" },
-	{ label: "fluent-ui" },
-	{ label: "material-ui" },
-	{ label: "Bootstrap 4" }
+};
+
+const ThemesList = [
+	{ label: "Material-ui" },
+	{ label: "Antd" },
+	{ label: "Fluent-ui" },
+	{ label: "Bootstrap 4" },
+	{ label: "Semantic UI" }
 ];
+
+
+const mapStateToProps = ({ global, themes }) => ({ global, themes: themes })
+export default connect(mapStateToProps)(ComboBox);
