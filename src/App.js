@@ -1,5 +1,5 @@
 import React from 'react';
-import ComboBox from "./component/ComboBox";
+import ComboBox from "./component/SchemaUI";
 import Button from "./component/Buttons";
 
 

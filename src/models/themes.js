@@ -14,7 +14,6 @@ export default {
   },
   reducers: {
     saveThemes(state, {payload}) {
-      // console.log(payload);
         return {
           ...state,
           uiSchema: payload

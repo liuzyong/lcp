@@ -9,7 +9,8 @@ import BootstrapSchema from "./UI/BootstrapSchema";
 import FluentSchema from "./UI/FluentSchema";
 // import SemanticSchema from "./component/UI/SemanticSchema";
 
-const ComboBox = (props) => {
+//支持多个UI风格切换
+const SchemaUI = (props) => {
 	const { dispatch, themes } = props;
 	const onInputChange = (event, newValue) => {
 		dispatch({
@@ -60,4 +61,4 @@ const ThemesList = [
 
 
 const mapStateToProps = ({ global, themes }) => ({ global, themes: themes })
-export default connect(mapStateToProps)(ComboBox);
+export default connect(mapStateToProps)(SchemaUI);
