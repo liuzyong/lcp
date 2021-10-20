@@ -1,12 +1,16 @@
 import React from 'react';
-import ComboBox from "./component/SchemaUI";
+import SchemaUI from "./component/SchemaUI";
 import Button from "./component/Buttons";
+import Amis from "./component/Amis";
 
-
-export default function App() {
-	return (
-		<div className="App">
-			<ComboBox />
-		</div>
-	);
+export default class App extends React.Component {
+	render() {
+		return (
+			<div className="App">
+				{/* <SchemaUI /> */}
+				{/* <Amis/> */}
+			</div>
+		);
+	}
+	
 }

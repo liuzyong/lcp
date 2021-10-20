@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from 'dva';
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -19,8 +19,8 @@ const SchemaUI = (props) => {
 		});
 	};
 
-	useEffect(() => {
-	});
+	// useEffect(() => {
+	// });
 
 	return (
 		<div>
