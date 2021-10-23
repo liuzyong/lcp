@@ -1,8 +1,11 @@
-import Form from "@rjsf/fluent-ui";
+import React from 'react';
+import { withTheme } from '@rjsf/core';
+import { Theme as SemanticUITheme } from '@rjsf/semantic-ui';
 import { useState } from "react";
-import MyData from "../../data/data";
+import MyData from "../../../data/data";
+const Form = withTheme(SemanticUITheme);
 
-const FluentSchema = () => {
+const SemanticSchema = () => {
 	const [formData, setFormData] = useState({
 		title: "First task11",
 		done: false
@@ -18,4 +21,4 @@ const FluentSchema = () => {
 		</div>
 	);
 };
-export default FluentSchema;
+export default SemanticSchema;

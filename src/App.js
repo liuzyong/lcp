@@ -1,16 +1,12 @@
 import React from 'react';
-import SchemaUI from "./component/SchemaUI";
-import Button from "./component/Buttons";
-import Amis from "./component/Amis";
+import ReactDOM from 'react-dom';
+import ProFrom from "./component/ProFrom";
 
-export default class App extends React.Component {
-	render() {
-		return (
-			<div className="App">
-				{/* <SchemaUI /> */}
-				{/* <Amis/> */}
-			</div>
-		);
-	}
-	
+export default function App() {
+	return (
+		<div className="App">
+			<ProFrom />
+		</div>
+	);
 }
+

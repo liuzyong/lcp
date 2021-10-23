@@ -3,14 +3,14 @@ import { connect } from 'dva';
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
-import MaterialSchema from "./UI/MaterialSchema";
-import AntdSchema from "./UI/AntdSchema";
-import BootstrapSchema from "./UI/BootstrapSchema";
-import FluentSchema from "./UI/FluentSchema";
+import MaterialSchema from "./MaterialSchema";
+import AntdSchema from "./AntdSchema";
+import BootstrapSchema from "./BootstrapSchema";
+import FluentSchema from "./FluentSchema";
 // import SemanticSchema from "./component/UI/SemanticSchema";
 
 //支持多个UI风格切换
-const SchemaUI = (props) => {
+const JsonSchemaFrom = (props) => {
 	const { dispatch, themes } = props;
 	const onInputChange = (event, newValue) => {
 		dispatch({
@@ -61,4 +61,4 @@ const ThemesList = [
 
 
 const mapStateToProps = ({ global, themes }) => ({ global, themes: themes })
-export default connect(mapStateToProps)(SchemaUI);
+export default connect(mapStateToProps)(JsonSchemaFrom);

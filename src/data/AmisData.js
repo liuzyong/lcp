@@ -2,7 +2,7 @@
 let data = {
 	ptest: {
 		type: "page",
-		body: "${word}"
+		body: "this is amis"
 	}
 };
 

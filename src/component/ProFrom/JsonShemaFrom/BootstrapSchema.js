@@ -1,8 +1,9 @@
-import Form from "@rjsf/antd";
+import React from 'react';
+import Form from "@rjsf/bootstrap-4";
 import { useState } from "react";
-import MyData from "../../data/data";
+import MyData from "../../../data/data";
 
-const AntdSchema = () => {
+const BootstrapSchema = () => {
 	const [formData, setFormData] = useState({
 		title: "First task11",
 		done: false
@@ -18,4 +19,4 @@ const AntdSchema = () => {
 		</div>
 	);
 };
-export default AntdSchema;
+export default BootstrapSchema;
