@@ -6,6 +6,8 @@ import { render as renderAmis } from "amis";
 import { alert, confirm } from "amis/lib/components/Alert";
 import { toast } from "amis/lib/components/Toast";
 import "amis/lib/themes/default.css";
+import 'amis/lib/helper.css'
+
 import PageData from "../../../data/AmisData";
 export default class MyTest extends React.Component {
 	render() {
