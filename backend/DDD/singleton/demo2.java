@@ -1,6 +1,6 @@
 package backend.DDD.singleton;
 
-public enum demo2 {
+public enum Demo2 {
     INSTANCE;
 
     public void m() {

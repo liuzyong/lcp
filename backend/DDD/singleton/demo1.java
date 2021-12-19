@@ -1,11 +1,11 @@
 package backend.DDD.singleton;
-public class demo1{
+public class Demo1{
 
-    private demo1(){}
+    private Demo1(){}
     private static class holder{
-        private final static demo1 INSTANCE = new demo1();
+        private final static Demo1 INSTANCE = new Demo1();
     }
-    public static demo1 getIntance(){
+    public static Demo1 getIntance(){
         return holder.INSTANCE;
     }
 

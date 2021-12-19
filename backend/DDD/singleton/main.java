@@ -7,8 +7,8 @@ public class main {
             new Thread(
                 ()->{
                     System.out.println();
-                    demo1.getIntance().name();
-                    demo2.INSTANCE.m();
+                    Demo1.getIntance().name();
+                    Demo2.INSTANCE.m();
                 }
                 )
             .start();
