@@ -3,3 +3,6 @@ yarn-error.log
 yarn.lock
 .DS_Store
 yarn-error.log
+out/
+.idea
+.git
