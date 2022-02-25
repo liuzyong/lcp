@@ -16,8 +16,8 @@
 
     <modules>
         <module>auth-server</module>
-<!--        <module>client-app</module>-->
-<!--        <module>resource-server</module>-->
+        <module>client-app</module>
+        <module>resource-server</module>
     </modules>
 
     <properties>
