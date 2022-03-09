@@ -37,22 +37,22 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         security.tokenKeyAccess("isAuthenticated()");
     }
 
-//    @Override
-//    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//        clients.jdbc(dataSource);
-//    }
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.inMemory()
-                .withClient("OrderManagement")
-                .secret(new BCryptPasswordEncoder().encode("order123"))
-                .autoApprove(true)
-                .redirectUris("http://localhost:8096/lcp/login")
-                .scopes("all")
-                .accessTokenValiditySeconds(7200)
-                .authorizedGrantTypes("authorization_code");
-
+        clients.jdbc(dataSource);
     }
+//    @Override
+//    public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+//        clients.inMemory()
+//                .withClient("OrderManagement")
+//                .secret(new BCryptPasswordEncoder().encode("order123"))
+//                .autoApprove(true)
+//                .redirectUris("http://localhost:8096/lcp/login")
+//                .scopes("all")
+//                .accessTokenValiditySeconds(7200)
+//                .authorizedGrantTypes("authorization_code");
+//
+//    }
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
