@@ -10,10 +10,10 @@ import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResour
 
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @SpringBootApplication
-public class ResourceMemberApplication {
+public class MemberApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ResourceMemberApplication.class, args);
+        SpringApplication.run(MemberApplication.class, args);
     }
 
 
