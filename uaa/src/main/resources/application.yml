@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.128.41:32140/shiro?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: 2YWAdQfD0F
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+  session:
+    store-type: redis
+  redis:
+    host: 192.168.128.41
+    password: 1tAie6CbtM
+    port: 31202
+
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+#    active: dev
+    active: @spring.profiles.active@
+
+server:
+  port: 8080
+
